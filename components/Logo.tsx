@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 export const Logo: React.FC<{ className?: string }> = ({ className = "h-6" }) => {
   const [error, setError] = useState(false);
+  const logoSrc = `${import.meta.env.BASE_URL}CHEMMIO.svg`;
 
   // If the image fails to load, we render a high-fidelity SVG text version
   // that matches the logo's typography (Montserrat/Geometric Sans).
@@ -32,7 +33,7 @@ export const Logo: React.FC<{ className?: string }> = ({ className = "h-6" }) =>
   // Using the image logo with a filter to make it white (invert) for the dark theme.
   return (
     <img 
-      src="/CHEMMIO.svg" 
+      src={logoSrc}
       alt="CHEMMIO" 
       className={`${className} object-contain brightness-0 invert`}
       onError={() => setError(true)}

@@ -4,8 +4,8 @@ import { GoogleGenAI } from "@google/genai";
 import { Activity, Shield, Crosshair } from 'lucide-react';
 
 // --- DATA ---
-const GAS_STATION_IMAGE = "/Chemmio%20on%20gas%20station.png";
-const PLANT_IMAGE = "/Gemini_Generated_Image_2mdi3h2mdi3h2mdi.png";
+const GAS_STATION_IMAGE = `${import.meta.env.BASE_URL}Chemmio%20on%20gas%20station.png`;
+const PLANT_IMAGE = `${import.meta.env.BASE_URL}Gemini_Generated_Image_2mdi3h2mdi3h2mdi.png`;
 
 type SectionDef = {
   id: string;
