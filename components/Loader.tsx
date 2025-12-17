@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const BOOT_SEQUENCE = [
-  "KERNEL_INIT_SEQUENCE_START",
-  "LOADING_CORE_MODULES...",
-  "MOUNTING_VIRTUAL_DRIVES [OK]",
-  "ESTABLISHING_SECURE_LINK...",
-  "DECRYPTING_ASSETS...",
-  "SYSTEM_READY"
+  "FLEET_TRACKING_INIT",
+  "CONNECTING_TO_PORT_AUTHORITY...",
+  "CHECKING_ADR_DATABASE [OK]",
+  "CALIBRATING_TANK_SENSORS...",
+  "LOADING_MANIFESTS...",
+  "LOGISTICS_NET_READY"
 ];
 
 const Loader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
@@ -34,8 +34,8 @@ const Loader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
     >
       <div className="w-full max-w-md">
         <div className="mb-8 border-b border-green-900 pb-2 flex justify-between">
-            <span>CHEMMIO_BIOS_V2.04</span>
-            <span>MEM: 64TB_OK</span>
+            <span>CHEMMIO_LOGISTICS_V2.04</span>
+            <span>FLEET: ACTIVE</span>
         </div>
         <div className="flex flex-col gap-1">
           {lines.map((line, i) => (

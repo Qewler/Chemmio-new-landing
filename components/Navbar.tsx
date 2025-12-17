@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, Aperture } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Logo from './Logo.tsx';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,31 +26,25 @@ const Navbar: React.FC = () => {
       >
         <div className="w-full px-6 h-20 flex items-center justify-between">
           {/* Logo Section */}
-          <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="w-8 h-8 bg-emerald-500 text-slate-900 flex items-center justify-center font-bold">
-              <Aperture className="w-5 h-5 animate-spin-slow" style={{ animationDuration: '10s' }} />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-lg font-bold tracking-tight text-white font-mono group-hover:text-emerald-500 transition-colors">
-                CHEMMIO
-              </span>
-              <span className="text-[10px] text-slate-500 font-mono tracking-widest">
-                SUPPLY_OS_V2
-              </span>
-            </div>
-          </div>
+          <a href="#index" className="flex items-center gap-4 group cursor-pointer">
+            <Logo className="h-6 text-white group-hover:text-emerald-500 transition-colors w-auto" />
+            <div className="h-5 w-[1px] bg-white/20" />
+            <span className="text-[10px] text-slate-500 font-mono tracking-widest pt-1 hidden sm:block">
+              GLOBAL_LOGISTICS_V2
+            </span>
+          </a>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center h-full">
             <div className="flex h-full border-l border-white/5">
-              <NavLink href="#" label="Index_01" />
-              <NavLink href="#capabilities" label="Sys_Ops_02" />
+              <NavLink href="#index" label="Index_01" />
+              <NavLink href="#capabilities" label="Fleet_Ops_02" />
               <NavLink href="#contact" label="Comm_Link_03" />
             </div>
-            <button className="h-full px-8 bg-white hover:bg-emerald-500 text-slate-900 transition-colors font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+            <a href="#contact" className="h-full px-8 bg-white hover:bg-emerald-500 text-slate-900 transition-colors font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2">
               Access Network
               <ArrowRight className="w-3 h-3" />
-            </button>
+            </a>
           </div>
 
           {/* Mobile Toggle */}
@@ -78,8 +73,8 @@ const Navbar: React.FC = () => {
               </button>
             </div>
             <div className="flex flex-col gap-8 text-2xl font-light font-mono text-slate-300">
-              <a href="#" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-emerald-500">01 // Index</a>
-              <a href="#capabilities" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-emerald-500">02 // Capabilities</a>
+              <a href="#index" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-emerald-500">01 // Index</a>
+              <a href="#capabilities" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-emerald-500">02 // Fleet Ops</a>
               <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-emerald-500">03 // Contact</a>
             </div>
           </motion.div>

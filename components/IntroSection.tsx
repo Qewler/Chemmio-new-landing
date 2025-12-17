@@ -15,11 +15,11 @@ const IntroSection: React.FC = () => {
            <h2 className="text-4xl lg:text-7xl font-bold leading-[0.9] tracking-tighter text-white mb-12">
              WE ENGINEER<br/>
              THE FLOW OF<br/>
-             <span className="text-slate-600">CRITICAL MATTER.</span>
+             <span className="text-slate-600">HAZARDOUS MATTER.</span>
            </h2>
            
            <p className="text-slate-400 text-xl font-light leading-relaxed max-w-md border-l border-slate-800 pl-6">
-             Chemical logistics is not just transport. It is a complex physics problem of thermal control, hazardous material handling, and route optimization.
+             Chemical logistics is not just transport. It is a complex physics problem of thermal control, pressure management, and route optimization for dangerous goods.
            </p>
         </div>
 
@@ -31,9 +31,9 @@ const IntroSection: React.FC = () => {
            </div>
 
            <div className="relative z-10 flex flex-col divide-y divide-slate-800 border-t border-b border-slate-800">
-             <FeatureRow num="01" title="Protocol" desc="SQAS Certified & ADR Compliant handling for all hazardous classes." />
-             <FeatureRow num="02" title="Network" desc="Intermodal connections across road, rail, and sea throughout EMEA." />
-             <FeatureRow num="03" title="Algorithm" desc="Route planning engine minimizing carbon footprint and transit time." />
+             <FeatureRow num="01" title="Compliance" desc="Full ADR, RID, & IMDG compliance for Classes 3, 6.1, 8 & 9." />
+             <FeatureRow num="02" title="Intermodal" desc="Seamless connection of Road, Rail, and Sea transport across EMEA." />
+             <FeatureRow num="03" title="Equipment" desc="Dedicated fleet of T11, T14, and T50 ISO Tank Containers." />
            </div>
         </div>
       </div>

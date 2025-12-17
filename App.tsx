@@ -12,6 +12,22 @@ import Footer from './components/Footer.tsx';
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
+  // Handle scroll to hash after loading is complete
+  useEffect(() => {
+    if (!loading) {
+      const hash = window.location.hash;
+      if (hash) {
+        // Small delay to ensure DOM is fully rendered
+        setTimeout(() => {
+          const element = document.querySelector(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+  }, [loading]);
+
   return (
     <main className="min-h-screen bg-[#050505] text-slate-200 selection:bg-emerald-500/30 selection:text-emerald-200">
       <AnimatePresence mode="wait">
