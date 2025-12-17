@@ -8,20 +8,20 @@ const FeatureGrid: React.FC = () => {
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-slate-800 pb-8">
            <div>
-             <span className="font-mono text-xs text-emerald-500 mb-2 block">:: SYSTEM_MODULES ::</span>
-             <h2 className="text-4xl font-bold tracking-tight text-white uppercase">Capabilities_Index</h2>
+             <span className="font-mono text-xs text-emerald-500 mb-2 block">:: SERVICE_INDEX ::</span>
+             <h2 className="text-4xl font-bold tracking-tight text-white uppercase">Operational Capabilities</h2>
            </div>
-           <span className="font-mono text-xs text-slate-500 mt-4 md:mt-0">FULL_SPECTRUM_LOGISTICS</span>
+           <span className="font-mono text-xs text-slate-500 mt-4 md:mt-0">FULL_SPECTRUM_HAZMAT_LOGISTICS</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-slate-800">
           {[
-            { icon: <Container />, title: "Freight Forwarding", desc: "Road, sea, and rail networks optimized.", id: "01" },
-            { icon: <FileCheck />, title: "Customs Clearance", desc: "Automated documentation processing.", id: "02" },
-            { icon: <Anchor />, title: "Import/Export", desc: "Global trade regulation compliance.", id: "03" },
-            { icon: <Clock />, title: "Expedited", desc: "Time-critical delivery protocols.", id: "04" },
-            { icon: <ArrowLeftRight />, title: "Multimodal", desc: "Integrated transport solutions.", id: "05" },
-            { icon: <CheckCircle2 />, title: "Certified Quality", desc: "ISO & SQAS audited operations.", id: "06" }
+            { icon: <Container />, title: "Bulk Liquid Transport", desc: "Specialized ISO tank transport for hazardous and non-hazardous chemicals.", id: "01" },
+            { icon: <FileCheck />, title: "Customs & Brokerage", desc: "Full hazmat documentation, T1 forms, and customs clearance.", id: "02" },
+            { icon: <Anchor />, title: "Tank Leasing", desc: "Short and long-term lease options for T11 and T50 tank containers.", id: "03" },
+            { icon: <Clock />, title: "Just-In-Time", desc: "Precision delivery windows for manufacturing facilities.", id: "04" },
+            { icon: <ArrowLeftRight />, title: "Intermodal", desc: "Seamless road-rail-sea integration for cost optimization.", id: "05" },
+            { icon: <CheckCircle2 />, title: "SQAS & ISO 9001", desc: "Fully audited quality and safety management systems.", id: "06" }
           ].map((item) => (
             <GridCard 
               key={item.id}

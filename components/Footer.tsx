@@ -1,5 +1,5 @@
 import React from 'react';
-import { Aperture } from 'lucide-react';
+import Logo from './Logo.tsx';
 
 const Footer: React.FC = () => {
   return (
@@ -8,8 +8,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-2 mb-6 text-white">
-              <Aperture className="w-6 h-6 text-emerald-500" />
-              <span className="text-lg font-bold tracking-tight">CHEMMIO</span>
+              <Logo className="h-8 text-white w-auto" />
             </div>
             <p className="text-sm mb-6 max-w-xs">
               Safe and efficient transport of liquid chemicals in Europe. Engineering the future of hazardous logistics.
