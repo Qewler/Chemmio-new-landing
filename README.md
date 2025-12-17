@@ -15,7 +15,7 @@ View your app in AI Studio: https://ai.studio/apps/drive/15PcQPUonHw9UItljOHXWDg
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+2. (Optional) Set `VITE_GEMINI_API_KEY` in `.env.local` if you want the AI image generation to run in your browser during local dev
 3. Run the app:
    `npm run dev`
 
@@ -56,3 +56,4 @@ npm run build
 - The build process automatically detects your repository name and sets the correct base path
 - If you need to customize the base path, set the `VITE_BASE_PATH` environment variable
 - The `.nojekyll` file ensures GitHub Pages doesn't process the site with Jekyll
+- Do not add a real Gemini key to GitHub Pages builds; anything shipped to the browser is public (prefer a server-side proxy for production)

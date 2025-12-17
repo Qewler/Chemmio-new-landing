@@ -39,8 +39,10 @@ const ParallaxShowcase: React.FC = () => {
     const fetchImages = async () => {
       let apiKey = '';
       try { 
-        // Google AI Studio provides API key via window.GEMINI_API_KEY or you can set it directly
-        apiKey = (window as any).GEMINI_API_KEY || 
+        // For local/dev you can set VITE_GEMINI_API_KEY (Vite-exposed env var).
+        // For embedded demos, you can also set window.GEMINI_API_KEY.
+        apiKey = import.meta.env.VITE_GEMINI_API_KEY ||
+                 (window as any).GEMINI_API_KEY || 
                  (window as any).process?.env?.GEMINI_API_KEY || 
                  (window as any).process?.env?.API_KEY || 
                  ''; 

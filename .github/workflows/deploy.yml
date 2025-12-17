@@ -35,11 +35,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          # Set empty API key for build (or use GitHub Secrets if needed)
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY || '' }}
-          # Ensure GITHUB_REPOSITORY is available for base path detection
-          GITHUB_REPOSITORY: ${{ github.repository }}
         continue-on-error: false
 
       - name: Verify build output
@@ -78,4 +73,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
