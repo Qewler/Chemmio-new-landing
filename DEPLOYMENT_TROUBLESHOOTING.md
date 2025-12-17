@@ -28,7 +28,8 @@ This usually means one of the workflow steps failed. Check the Actions tab to se
 
 1. Go to your repository on GitHub
 2. Click **Settings** → **Pages**
-3. Under **Source**, select **"GitHub Actions"** (NOT "Deploy from a branch")
+3. Under **Source**, select **"Deploy from a branch"**
+4. Select branch `gh-pages` and folder `/ (root)`
 4. Click **Save**
 
 If you don't do this, the deployment step will fail.
@@ -99,4 +100,3 @@ If this works locally, the GitHub Actions build should work too.
 2. Verify GitHub Pages is enabled (Settings → Pages → Source = "GitHub Actions")
 3. Make sure you've pushed the workflow file to the repository
 4. Try manually triggering the workflow (Actions → "Deploy to GitHub Pages" → "Run workflow")
-
