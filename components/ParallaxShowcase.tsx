@@ -5,6 +5,7 @@ import { Activity, Shield, Crosshair } from 'lucide-react';
 
 // --- DATA ---
 const GAS_STATION_IMAGE = "/Chemmio%20on%20gas%20station.png";
+const PLANT_IMAGE = "/Gemini_Generated_Image_2mdi3h2mdi3h2mdi.png";
 
 type SectionDef = {
   id: string;
@@ -32,8 +33,8 @@ const SECTIONS: SectionDef[] = [
     desc: "Our proprietary sensor network tracks cargo conditions in real-time. Temperature, pressure, and shock events are logged during transit, ensuring product integrity from loading arm to discharge.",
     prompt: "Photorealistic close-up of industrial stainless steel chemical tank containers stacked in a high-tech port. Glowing emerald green holographic data overlays displaying pressure metrics floating near the valves. Night time, cinematic lighting, sharp details, 8k.",
     // Keep this visual static (avoids mismatched AI/stock imagery).
-    fixedImage: GAS_STATION_IMAGE,
-    fallback: GAS_STATION_IMAGE
+    fixedImage: PLANT_IMAGE,
+    fallback: PLANT_IMAGE
   },
   {
     id: "03",
@@ -41,7 +42,9 @@ const SECTIONS: SectionDef[] = [
     title: "Strategic Routing",
     desc: "Seamless transition between transport modes. We calculate optimal routes across road, rail, and sea, dynamically adjusting for weather patterns, border delays, and port congestion.",
     prompt: "Wide atmospheric shot of a futuristic logistics hub filled with rows of ISO tank containers and autonomous trucks. Dark moody atmosphere with emerald green security lasers cutting through the mist. Wet concrete reflections, high-tech facility, 8k resolution.",
-    fallback: "https://images.unsplash.com/photo-1565615833231-e8c91a38a012?q=80&w=2070&auto=format&fit=crop"
+    // Replace the previous stock photo that didn't match the brand.
+    fixedImage: GAS_STATION_IMAGE,
+    fallback: GAS_STATION_IMAGE
   }
 ];
 
