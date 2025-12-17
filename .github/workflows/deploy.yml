@@ -31,12 +31,34 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        continue-on-error: false
 
       - name: Build
         run: npm run build
         env:
           # Set empty API key for build (or use GitHub Secrets if needed)
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY || '' }}
+          # Ensure GITHUB_REPOSITORY is available for base path detection
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        continue-on-error: false
+
+      - name: Verify build output
+        run: |
+          echo "Build output contents:"
+          ls -la dist/
+          if [ ! -f "dist/index.html" ]; then
+            echo "Error: dist/index.html not found!"
+            exit 1
+          fi
+          echo "✓ Build output verified"
+
+      - name: Ensure .nojekyll exists
+        run: |
+          if [ ! -f "dist/.nojekyll" ]; then
+            echo "Creating .nojekyll file..."
+            touch dist/.nojekyll
+          fi
+          echo "✓ .nojekyll file verified"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
