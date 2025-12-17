@@ -1,9 +1,15 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
+// Get the directory of the current module (ESM equivalent of __dirname)
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, process.cwd(), '');
+    // Use config file's directory instead of process.cwd() to ensure .env.local
+    // is found regardless of where Vite is invoked from
+    const env = loadEnv(mode, __dirname, '');
     
     // GitHub Pages base path configuration
     // If GITHUB_REPOSITORY is set (in CI), extract repo name
