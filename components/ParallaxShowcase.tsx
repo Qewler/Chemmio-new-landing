@@ -4,7 +4,19 @@ import { GoogleGenAI } from "@google/genai";
 import { Activity, Shield, Crosshair } from 'lucide-react';
 
 // --- DATA ---
-const SECTIONS = [
+const GAS_STATION_IMAGE = "/Chemmio%20on%20gas%20station.png";
+
+type SectionDef = {
+  id: string;
+  label: string;
+  title: string;
+  desc: string;
+  prompt: string;
+  fallback: string;
+  fixedImage?: string;
+};
+
+const SECTIONS: SectionDef[] = [
   {
     id: "01",
     label: "FLEET_OPERATIONS",
@@ -19,7 +31,9 @@ const SECTIONS = [
     title: "Real-time Cargo Monitoring",
     desc: "Our proprietary sensor network tracks cargo conditions in real-time. Temperature, pressure, and shock events are logged during transit, ensuring product integrity from loading arm to discharge.",
     prompt: "Photorealistic close-up of industrial stainless steel chemical tank containers stacked in a high-tech port. Glowing emerald green holographic data overlays displaying pressure metrics floating near the valves. Night time, cinematic lighting, sharp details, 8k.",
-    fallback: "https://images.unsplash.com/photo-1516937941348-c09645f31e88?q=80&w=2070&auto=format&fit=crop"
+    // Keep this visual static (avoids mismatched AI/stock imagery).
+    fixedImage: GAS_STATION_IMAGE,
+    fallback: GAS_STATION_IMAGE
   },
   {
     id: "03",
@@ -33,7 +47,7 @@ const SECTIONS = [
 
 const ParallaxShowcase: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [images, setImages] = useState<string[]>(SECTIONS.map(s => s.fallback));
+  const [images, setImages] = useState<string[]>(SECTIONS.map(s => s.fixedImage ?? s.fallback));
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -56,6 +70,7 @@ const ParallaxShowcase: React.FC = () => {
       
       // Load images one by one
       for (let i = 0; i < SECTIONS.length; i++) {
+        if (SECTIONS[i].fixedImage) continue;
         try {
           const res = await ai.models.generateContent({
              model: 'gemini-2.5-flash-image',

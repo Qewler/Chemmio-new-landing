@@ -32,7 +32,7 @@ export const Logo: React.FC<{ className?: string }> = ({ className = "h-6" }) =>
   // Using the image logo with a filter to make it white (invert) for the dark theme.
   return (
     <img 
-      src="https://chemmio.com/wp-content/uploads/2021/03/Chemmio-Logo.png" 
+      src="/CHEMMIO.svg" 
       alt="CHEMMIO" 
       className={`${className} object-contain brightness-0 invert`}
       onError={() => setError(true)}
